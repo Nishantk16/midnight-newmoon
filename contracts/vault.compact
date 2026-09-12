@@ -1,0 +1,32 @@
+pragma language_version >= 0.23;
+
+import CompactStandardLibrary;
+
+// Public ledger state — visible to everyone on-chain
+export ledger commitment: Bytes<32>;
+export ledger isRevealed: Boolean;
+export ledger revealedNumber: Uint<32>;
+
+// Private witnesses — never leave the user's machine unless disclosed
+witness secretNumber(): Uint<32>;
+witness salt(): Bytes<32>;
+
+// Commits to a secret number without revealing it
+export circuit commitSecret(): [] {
+  const hash = persistentHash<Vector<2, Bytes<32>>>([
+    (secretNumber() as Field) as Bytes<32>,
+    salt()
+  ]);
+  commitment = disclose(hash);
+}
+
+// Reveals the secret only if it matches the earlier commitment
+export circuit revealSecret(guess: Uint<32>): [] {
+  const hash = persistentHash<Vector<2, Bytes<32>>>([
+    (guess as Field) as Bytes<32>,
+    salt()
+  ]);
+  assert(hash == commitment, "Guess does not match committed secret");
+  revealedNumber = disclose(guess);
+  isRevealed = true;
+}

@@ -1,0 +1,78 @@
+{
+  "manifest-version": "1",
+  "compiler-version": "0.34.0",
+  "language-version": "0.26.0",
+  "runtime-version": "0.19.0",
+  "compiler": {
+    "type": "directory",
+    "contract-info.json": {
+      "type": "file",
+      "size": 1583,
+      "hash": "e9a3b90ac78c7829fff357cdef8f7b53ca72a7e36014a83cd1c50ac2f77ac20d"
+    }
+  },
+  "contract": {
+    "type": "directory",
+    "index.d.ts": {
+      "type": "file",
+      "size": 1957,
+      "hash": "732e17a577a4328a7c74f1bb26f6e01e14b97b71a2a97fcadfeb937798be7b9b"
+    },
+    "index.js": {
+      "type": "file",
+      "size": 24104,
+      "hash": "c789c361730454abdee408d884787914d2e6fa5aca93a5ace47c2b9393caf24b"
+    },
+    "index.js.map": {
+      "type": "file",
+      "size": 980,
+      "hash": "426529e3c2e3992b3f8c8ae8225cb9e2c2422ccd880efa3cf4e743b0e28e33c9"
+    }
+  },
+  "zkir": {
+    "type": "directory",
+    "commitSecret.bzkir": {
+      "type": "file",
+      "size": 106,
+      "hash": "2ea5ecab255b16dc7c3b384f3ae700e3d6af3f8eb42fb77c000994cff49a3ca9"
+    },
+    "commitSecret.zkir": {
+      "type": "file",
+      "size": 1608,
+      "hash": "bd3ee1fa1879d95918e7bfdb545bec2d5fac9abb841e8b7548a792f55f6a2564"
+    },
+    "revealSecret.bzkir": {
+      "type": "file",
+      "size": 196,
+      "hash": "734924cf36ebb49ee8bdff81cfeeeee291bfa09b79f07eaefbbf98aff27c58c1"
+    },
+    "revealSecret.zkir": {
+      "type": "file",
+      "size": 3229,
+      "hash": "fdf1aaf724153b6ad7908ff03e8e223a0b48ae32d1acfa1635fdc79f9b9705e5"
+    }
+  },
+  "keys": {
+    "type": "directory",
+    "commitSecret.prover": {
+      "type": "file",
+      "size": 2826006,
+      "hash": "88713fef831ad01a5589dc21136530bf15bb8f3fb7eb5e32d93e1a9730e917d5"
+    },
+    "commitSecret.verifier": {
+      "type": "file",
+      "size": 2119,
+      "hash": "aea9eebe8b31011a6d93d8fec21f0328ce9e8a003c7de88a604f9b4eaa10c81f"
+    },
+    "revealSecret.prover": {
+      "type": "file",
+      "size": 2826395,
+      "hash": "3296720f2b82acfde48b1c0101d3109cd87072bbd2ab1fac51c253f92ade2b3f"
+    },
+    "revealSecret.verifier": {
+      "type": "file",
+      "size": 2119,
+      "hash": "61d04f43b8f01293eb688182749a90f3fd090be926dc245af61211a8e0ff0b56"
+    }
+  }
+}
