@@ -41,16 +41,21 @@ npx vitest run
 ```
 
 ### Deploy to Preprod
-See `deploy/` for the wallet funding and deployment scripts used to deploy this contract to Midnight's Preprod testnet.
+See `deploy/` for the wallet funding and deployment scripts used in this attempt.
 
 ## Deployed contract
 
-- **Network:** Preprod
-- **Contract address:** _(to be added after deployment)_
+**Status: deployment attempted, not yet completed.**
+
+The wallet was successfully funded with 1000 tNIGHT on Preprod (faucet tx confirmed), and DUST registration was submitted. However, full wallet synchronization against Preprod repeatedly took 60-90+ minutes on the available development hardware, and the final transaction submission step intermittently failed with a WebSocket disconnection from the Preprod RPC node (`disconnected from wss://rpc.preprod.midnight.network/: 1000: Normal Closure`) — a behavior that persisted across two independent implementations (a hand-rolled `@midnightntwrk/wallet-sdk` script and the official `create-mn-app` CLI tool). Preview network sync was fast (~15s) but its faucet rejected the generated address as invalid.
+
+Given the time already invested in this attempt, deployment will be retried in a later submission window.
 
 ## Status
 
 - [x] Toolchain installed
 - [x] Contract compiled (`compact compile`)
 - [x] Passing test suite
-- [ ] Deployed to Preprod
+- [x] Generated `managed/` directory (circuits + keys)
+- [x] Wallet funded on Preprod (1000 tNIGHT)
+- [ ] Deployed to Preview/Preprod — blocked by RPC/sync issues described above
